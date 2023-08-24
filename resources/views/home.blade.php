@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>{{ $title }}</h1>
 @stop
 
 @section('content')
@@ -11,7 +11,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Refacciones</div>
+                <div class="card-header">
+                    {{ $subTitle }}
+                    <button type="button" class="btn btn-warning float-right btn-sm">Agregar</button>
+                </div>
                 <div class="card-body">
                     <table class="table table-bordered table-striped refaccions_table" style="width: 100%;">
                         <thead>

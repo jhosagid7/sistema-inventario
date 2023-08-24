@@ -25,6 +25,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $title = 'Refacciones';
+        $subTitle = 'Listado';
 
         if ($request->ajax()) {
 
@@ -35,6 +37,6 @@ class HomeController extends Controller
                 ->rawColumns(['actions'])
                 ->make(true);
         }
-        return view('home');
+        return view('home', compact('title', 'subTitle'));
     }
 }

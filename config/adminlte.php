@@ -320,8 +320,8 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'Productos',
-            'url'  => 'admin/settings',
+            'text' => 'Refacciones',
+            'url'  => 'refaccions',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -537,5 +537,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

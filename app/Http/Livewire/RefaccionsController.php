@@ -84,22 +84,21 @@ class RefaccionsController extends Component
     public function Update()
     {
         $rules = [
-            'name' => "'required|unique:refaccions|min:3",
-            'stock' => "required|min:1"
+            'name' => 'required|min:3',
+            'stock' => 'required'
         ];
 
         $messages = [
-            'name.required' => 'Nombre de refaccion requerido',
+            'name.required' => 'Nombre de la refaccion es requerido',
             'name.min' => 'El nombre de la refaccion debe tener al menos 3 caracteres',
-            'name.unique' => 'El nombre de la refaccion ya existe',
-            'stock.required' => 'Stock es requerido'
+            'stock.required' => 'Nombre de la refaccion es requerido'
         ];
 
         $this->validate($rules, $messages);
 
 
-        $category = Refaccion::find($this->selected_id);
-        $category->update([
+        $refaccion = Refaccion::find($this->selected_id);
+        $refaccion->update([
             'name' => $this->name,
             'stock' => $this->stock,
             'alerts' => $this->alerts

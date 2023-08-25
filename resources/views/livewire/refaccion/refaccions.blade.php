@@ -32,16 +32,18 @@
 								<td><h6>{{ $refaccion->stock }}</h6></td>
 
 								<td class="text-center">
-									<a href="javascript:void(0)" class="btn btn-dark mtmobile" title="Edit">
-										<i class="fas fa-edit"></i>
-									</a>
+									<a href="javascript:void(0)"
+									wire:click="Edit({{$refaccion->id}})"
+									class="btn btn-dark mtmobile" title="Edit">
+									<i class="fas fa-edit"></i>
+								    </a>
 
-									<a href="javascript:void(0)" class="btn btn-dark" title="Delete">
-										<i class="fas fa-trash"></i>
-									</a>
-
-
-								</td>
+								    <a href="javascript:void(0)"
+                                    onclick="Confirm('{{$refaccion->id}}')"
+                                    class="btn btn-dark" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
 							</tr>
                             @endforeach
 
@@ -64,51 +66,47 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function(){
-        window.livewire.on('refaccion-added', msg =>{
-            $('#theModal').modal('hide');
-            noty(msg)
-        })
-
-        window.livewire.on('refaccion-updated', msg =>{
-            $('#theModal').modal('hide');
-            noty(msg)
-        })
-
-        window.livewire.on('refaccion-deleted', msg =>{
-            noty(msg)
-        })
-
-        window.livewire.on('hide-modal', msg =>{
-            $('#theModal').modal('hide');
-        })
-
         window.livewire.on('show-modal', msg =>{
-            $('#theModal').modal('show');
+			$('#theModal').modal('show')
+		})
+		window.livewire.on('hide-modal', msg =>{
+			$('#theModal').modal('hide')
+		})
+        window.livewire.on('hidden.bs.modal', msg =>{
+        $('.er').css('display', 'none')
         })
-
-        window.livewire.on('hide-modal', msg =>{
-            $('#er').css('display', 'none');
-        })
+		window.livewire.on('refaccion-added', msg =>{
+			$('#theModal').modal('hide')
+            noty(msg)
+		})
+		window.livewire.on('refaccion-updated', msg =>{
+			$('#theModal').modal('hide')
+            noty(msg)
+		})
+		window.livewire.on('refaccion-deleted', msg =>{
+            noty(msg)
+		})
 
 
 	});
 
-    function Comfirms(id)
-    {
-        swal({
-            title: 'COMFIRMAR',
-            text: 'CONFIRMAS ELIMINAR EL REGISTRO?',
-            type: 'warning',
-            showCancelButton: true,
-            cancelButtonText: 'Cerrar',
-            cancelButtonColor: '#fff',
-            confirmButtonText: 'Aceptar',
-            confirmButtonColor: '#3B3FC'
-        }).then(function(result){
-            if(result.vaue){
-                window.livewire.emit('deleteRow', id)
-                swal.close()
-            }
-        })
-    }
+    function Confirm(id, products)
+	{
+		swal({
+			title: 'CONFIRMAR',
+			text: '¿CONFIRMAS ELIMINAR EL REGISTRO?',
+			type: 'warning',
+			showCancelButton: true,
+			cancelButtonText: 'Cerrar',
+			cancelButtonColor: '#fff',
+			confirmButtonColor: '#3B3F5C',
+			confirmButtonText: 'Aceptar'
+		}).then(function(result) {
+			if(result.value){
+				window.livewire.emit('deleteRow', id)
+				swal.close()
+			}
+
+		})
+	}
 </script>

@@ -42,7 +42,7 @@ class RefaccionsController extends Component
     public function Edit($id)
     {
         $record = Refaccion::find($id, ['id', 'name', 'stock', 'alerts']);
-        $this->name = $record->name;
+        $this->name = ucfirst($record->name);
         $this->stock = $record->stock;
         $this->alerts = $record->alerts;
         $this->selected_id = $record->id;
@@ -69,7 +69,7 @@ class RefaccionsController extends Component
         $this->validate($rules, $messages);
 
         $category = Refaccion::create([
-            'name' => $this->name,
+            'name' => ucfirst($this->name),
             'stock' => $this->stock,
             'alerts' => $this->alerts
         ]);
@@ -99,7 +99,7 @@ class RefaccionsController extends Component
 
         $refaccion = Refaccion::find($this->selected_id);
         $refaccion->update([
-            'name' => $this->name,
+            'name' => ucfirst($this->name),
             'stock' => $this->stock,
             'alerts' => $this->alerts
         ]);

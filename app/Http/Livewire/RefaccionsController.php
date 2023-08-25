@@ -96,7 +96,6 @@ class RefaccionsController extends Component
 
         $this->validate($rules, $messages);
 
-
         $refaccion = Refaccion::find($this->selected_id);
         $refaccion->update([
             'name' => ucfirst($this->name),

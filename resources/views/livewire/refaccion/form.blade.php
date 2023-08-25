@@ -13,7 +13,7 @@
                     </span>
                 </span>
             </div>
-            <input type="text" wire:model.lazy="name" class="form-control" placeholder="ej: Nombre de la Refaccion"
+            <input type="text" wire:model.lazy="name" class="form-control refaccion-name" placeholder="ej: Nombre de la Refaccion"
                 maxlength="255">
         </div>
         @error('name')
@@ -30,7 +30,7 @@
                     </span>
                 </span>
             </div>
-            <input type="text" wire:model.lazy="stock" class="form-control" placeholder="stock ej: 10"
+            <input type="number" wire:model.lazy="stock" class="form-control" placeholder="stock ej: 10"
                 maxlength="255">
         </div>
         @error('stock')
@@ -47,7 +47,7 @@
                     </span>
                 </span>
             </div>
-            <input type="text" wire:model.lazy="alerts" class="form-control" placeholder="Minimo stock ej: 5"
+            <input type="number" wire:model.lazy="alerts" class="form-control" placeholder="Minimo stock ej: 5"
                 maxlength="255">
         </div>
         @error('alerts')

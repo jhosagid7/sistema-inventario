@@ -32,8 +32,7 @@
 								<td><h6>{{ $refaccion->stock }}</h6></td>
 
 								<td class="text-center">
-									<a href="javascript:void(0)"
-									wire:click="Edit({{$refaccion->id}})"
+									<a href="javascript:void(0)" wire:click.prevent="Edit({{$refaccion->id}})"
 									class="btn btn-dark mtmobile" title="Edit">
 									<i class="fas fa-edit"></i>
 								    </a>
@@ -72,9 +71,7 @@
 		window.livewire.on('hide-modal', msg =>{
 			$('#theModal').modal('hide')
 		})
-        window.livewire.on('hidden.bs.modal', msg =>{
-        $('.er').css('display', 'none')
-        })
+
 		window.livewire.on('refaccion-added', msg =>{
 			$('#theModal').modal('hide')
             noty(msg)
@@ -85,6 +82,14 @@
 		})
 		window.livewire.on('refaccion-deleted', msg =>{
             noty(msg)
+		})
+
+
+		$('#theModal').on('hidden.bs.modal', function(e) {
+			$('.er').css('display', 'none')
+		})
+		$('#theModal').on('shown.bs.modal', function(e) {
+			$('.refaccion-name').focus()
 		})
 
 

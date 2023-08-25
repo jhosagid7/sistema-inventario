@@ -6,13 +6,12 @@ use Livewire\Component;
 
 class OutputController extends Component
 {
-    public $ver, $pageTitle, $componentName;
+    public $pageTitle, $componentName;
 
     public function mount()
     {
         $this->pageTitle = 'Listado';
-        $this->componentName = 'Refactiones';
-        $this->ver = 'ver';
+        $this->componentName = 'Salidas';
     }
 
     public function render()

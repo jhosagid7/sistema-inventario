@@ -18,7 +18,7 @@
 
 				<div class="table-responsive">
 					<table class="table table-bordered table striped mt-1">
-						<thead class="text-white" style="background: #3B3F5C">
+						<thead class="text-white" style="background: #343a40">
 							<tr>
 								<th class="table-th text-white">REFACCION</th>
 								<th class="table-th text-white">STOCK</th>

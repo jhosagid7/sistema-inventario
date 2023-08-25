@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\OutputController;
 use App\Http\Livewire\RefaccionsController;
 
 /*
@@ -24,6 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('refaccions', RefaccionsController::class);
+Route::get('output', OutputController::class);
 
 // Auth::routes();
 

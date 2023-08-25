@@ -13,16 +13,12 @@ class RefaccionsController extends Component
 
     public $name, $search, $selected_id, $pageTitle, $componentName, $stock, $alerts;
     private $pagination = 5;
+    protected $paginationTheme = 'bootstrap';
 
     public function mount()
     {
         $this->pageTitle = 'Listado';
         $this->componentName = 'Refactiones';
-    }
-
-    public function paginationView()
-    {
-        return 'vendor.livewire.bootstrap';
     }
 
     public function render()
@@ -35,7 +31,7 @@ class RefaccionsController extends Component
 
 
         return view('livewire.refaccion.refaccions', ['refaccions' => $data])
-            ->extends('home')
+            ->extends('layouts.theme.app')
             ->section('content');
     }
 

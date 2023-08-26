@@ -1,5 +1,5 @@
 @section('content_header')
-    <h1>{{ $componentName }} </h1>
+    <h6></h6>
 @stop
 
 <div class="row layout-top-spacing">
@@ -18,6 +18,7 @@
 </div>
 
 @push('css')
+@include('livewire.outputs.scripts.general')
     <style>
 
     </style>

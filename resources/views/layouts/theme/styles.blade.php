@@ -3,3 +3,5 @@
     <link href="{{ asset('plugins/sweetalerts/sweetalert.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('vendor/adminlte/dist/css/admin_custom.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/apps/scrumboard.css') }}" rel="stylesheet" type="text/css" />
+ <link href="{{ asset('assets/css/apps/notes.css') }}" rel="stylesheet" type="text/css" />

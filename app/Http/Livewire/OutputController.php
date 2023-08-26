@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class OutputController extends Component
 {
-    public $pageTitle, $componentName;
+    public $pageTitle, $componentName, $cart=[], $total, $itemsQuantity=1, $comment;
 
     public function mount()
     {

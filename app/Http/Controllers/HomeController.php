@@ -35,6 +35,7 @@ class HomeController extends Controller
                 ->rawColumns(['actions'])
                 ->make(true);
         }
-        return view('home');
+        return view('home')->extends('layouts.theme.app')
+        ->section('content');;
     }
 }

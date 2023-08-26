@@ -4,15 +4,24 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Refaccion;
+use App\Traits\CartTrait;
 use Livewire\WithPagination;
+
 
 class RefaccionsController extends Component
 {
 
     use WithPagination;
+    use CartTrait;
 
     public $name, $search, $selected_id, $pageTitle, $componentName, $stock, $alerts;
     private $pagination = 5;
+
+    function ScanCode($id)
+    {
+        $this->ScanearCode($id);
+        // $this->emit('global-msg', "SE AGREGÓ EL PRODUCTO AL CARRITO");
+    }
     protected $paginationTheme = 'bootstrap';
 
     public function mount()
@@ -25,7 +34,7 @@ class RefaccionsController extends Component
     {
 
         if (strlen($this->search) > 0)
-        $data = Refaccion::where('name', 'like', '%' . $this->search . '%')->paginate($this->pagination);
+            $data = Refaccion::where('name', 'like', '%' . $this->search . '%')->paginate($this->pagination);
         else
             $data = Refaccion::orderBy('id', 'desc')->paginate($this->pagination);
 

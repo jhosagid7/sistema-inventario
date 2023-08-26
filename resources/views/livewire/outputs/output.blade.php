@@ -18,13 +18,14 @@
 </div>
 
 @push('css')
-@include('livewire.outputs.scripts.general')
+@include('livewire.outputs.scripts.css')
     <style>
 
     </style>
 @endpush
 
 @push('js')
+@include('livewire.outputs.scripts.scripts')
     <script>
 
     </script>

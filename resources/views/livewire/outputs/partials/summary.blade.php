@@ -8,7 +8,7 @@
                 <div class="connet-sorting-content">
                     <div class="card simple-title-task ui-sortable-handle">
                         <div class="card-body">
-                            <div class="table-responsive task-header tblscrol"  style="max-height:200px; overflow: hidden">
+                            <div class="table-responsive task-header tblscroll"  style="max-height:150px; overflow: hidden">
                                 <div>
                                     <h5>TOTAL REFACCIONES: {{ $itemsQuantity ?? 0}}</h5>
                                     <input type="hidden" id="hiddentTotalQty" value="{{ $itemsQuantity }}">

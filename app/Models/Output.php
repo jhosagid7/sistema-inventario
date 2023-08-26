@@ -9,5 +9,15 @@ class Output extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['items', 'status', 'user_id'];
+    protected $fillable = ['items','status', 'comment', 'user_id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function outputs()
+    {
+        return $this->hasMany(OutputDetail::class);
+    }
 }

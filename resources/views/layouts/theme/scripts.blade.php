@@ -60,7 +60,7 @@
             dom: 'lBfrtip',
             buttons: [{
                     extend: 'copy',
-                    className: 'btn-light',
+                    className: 'btn-outline-secondary',
                     text: 'Copiar',
                     exportOptions: {
                         columns: ':visible'
@@ -68,7 +68,7 @@
                 },
                 {
                     extend: 'csv',
-                    className: 'btn-light',
+                    className: 'btn-outline-info',
                     text: 'CSV',
                     exportOptions: {
                         columns: ':visible'
@@ -76,7 +76,7 @@
                 },
                 {
                     extend: 'excel',
-                    className: 'btn-light',
+                    className: 'btn-outline-success',
                     text: 'Excel',
                     exportOptions: {
                         columns: ':visible'
@@ -84,7 +84,7 @@
                 },
                 {
                     extend: 'pdf',
-                    className: 'btn-light',
+                    className: 'btn-outline-danger',
                     text: 'PDF',
                     exportOptions: {
                         columns: ':visible'
@@ -92,7 +92,7 @@
                 },
                 {
                     extend: 'print',
-                    className: 'btn-light',
+                    className: 'btn-outline-secondary',
                     text: 'Imprimir',
                     exportOptions: {
                         columns: ':visible'
@@ -100,7 +100,7 @@
                 },
                 {
                     extend: 'colvis',
-                    className: 'btn-light',
+                    className: 'btn-outline-secondary',
                     text: 'Visibilidad Columnas',
                     exportOptions: {
                         columns: ':visible'

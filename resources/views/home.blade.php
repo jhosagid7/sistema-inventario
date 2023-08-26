@@ -13,13 +13,16 @@
             <div class="card">
                 <div class="card-header">Refacciones</div>
                 <div class="card-body">
-                    <table class="table table-bordered table-striped refaccions_table" style="width: 100%;">
-                        <thead>
+                    <table class="table table-sm table-bordered table-striped refaccions_table" style="width: 100%;">
+                        <thead class=" text-white"  style="background: #343a40">
                             <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Stock</th>
-                                <th scope="col">Alert</th>
-                                <th scope="col">Acciones</th>
+                                <th class="text-center" scope="col">N°</th>
+                                <th class="text-center" scope="col">Operador</th>
+                                <th class="text-center" scope="col">Cant</th>
+                                <th class="text-center" scope="col">Comentario</th>
+                                <th class="text-center" scope="col">Status</th>
+                                <th class="text-center" scope="col">Fecha</th>
+                                <th class="text-center" scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,20 +55,37 @@
             dataType: 'json',
             type: "POST",
             columns: [{
-                    data: 'name',
-                    name: 'name'
+                    data: 'id',
+                    name: 'id',
+                    className: 'text-center'
                 },
                 {
-                    data: 'stock',
-                    name: 'stock',
+                    data: 'user.name',
+                    name: 'user.name',
                 },
                 {
-                    data: 'alerts',
-                    name: 'alerts',
+                    data: 'items',
+                    name: 'items',
+                    className: 'text-center'
+                },
+                {
+                    data: 'comment',
+                    name: 'comment',
+                },
+                {
+                    data: 'status',
+                    name: 'status',
+                    className: 'text-center'
+                },
+                {
+                    data: 'created_at',
+                    name: 'created_at',
+                    className: 'text-center'
                 },
                 {
                     data: 'actions',
                     name: 'actions',
+                    className: 'text-center',
                     searchable: false,
                     orderable: false
                 }

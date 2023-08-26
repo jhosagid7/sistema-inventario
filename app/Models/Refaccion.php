@@ -10,4 +10,9 @@ class Refaccion extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'stock', 'alerts'];
+
+    public function outputs()
+    {
+        return $this->hasMany(OutputDetail::class);
+    }
 }

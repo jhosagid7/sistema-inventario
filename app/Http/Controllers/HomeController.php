@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Output;
 use App\Models\Refaccion;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -25,17 +26,17 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-
+        // $outputs = Output::with('user')->get();
+        // dd($outputs[0]->user->name);
         if ($request->ajax()) {
 
-            $refaccions = Refaccion::select('refaccions.*');
-
-            return DataTables::of($refaccions)
+            // $outputs = Output::with('users')->select('outputs.*');
+            $outputs = Output::with('user')->get();
+            return DataTables::of($outputs)
                 ->addColumn('actions', 'refaccions.action')
                 ->rawColumns(['actions'])
                 ->make(true);
         }
-        return view('home')->extends('layouts.theme.app')
-        ->section('content');;
+        return view('home');
     }
 }

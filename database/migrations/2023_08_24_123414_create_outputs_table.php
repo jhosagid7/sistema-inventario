@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('items');
             $table->enum('status', ['APPROVED', 'PENDING', 'CANCELED'])->default('APPROVED');
+            $table->text('comment');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

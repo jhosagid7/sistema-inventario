@@ -16,8 +16,8 @@
 
 			<div class="widget-content">
 
-				<div class="table-responsive">
-					<table class="table table-bordered table striped mt-1">
+				<div class="table-responsive table-sm">
+					<table class="table table-sm table-bordered table striped mt-1">
 						<thead class="text-white" style="background: #343a40">
 							<tr>
 								<th class="table-th text-white">REFACCION</th>
@@ -33,15 +33,12 @@
 
 								<td class="text-center">
 									<a href="javascript:void(0)" wire:click.prevent="Edit({{$refaccion->id}})"
-									class="btn btn-dark mtmobile" title="Edit">
+									class="btn btn-dark mtmobile btn-sm" title="Edit">
 									<i class="fas fa-edit"></i>
 								    </a>
 
-								    <a href="javascript:void(0)"
-                                    onclick="Confirm('{{$refaccion->id}}')"
-                                    class="btn btn-dark" title="Delete">
-                                    <i class="fas fa-trash"></i>
-                                    </a>
+                                    <button type="button" wire:click.prevent="ScanCode('{{$refaccion->id}}')" class="btn btn-dark btn-sm"><i class="fas fa-wrench"></i>
+									</button>
                                 </td>
 							</tr>
                             @endforeach
@@ -91,6 +88,14 @@
 		$('#theModal').on('shown.bs.modal', function(e) {
 			$('.refaccion-name').focus()
 		})
+
+        window.livewire.on('no-stock', Msg => {
+        noty(Msg, 2)
+        })
+
+        window.livewire.on('scan-ok', Msg => {
+        noty(Msg)
+        })
 
 
 	});

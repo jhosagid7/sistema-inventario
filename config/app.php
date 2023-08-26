@@ -171,6 +171,7 @@ return [
 
         //Laravel Datatable
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Darryldecode\Cart\CartServiceProvider::class
     ])->toArray(),
 
     /*
@@ -189,6 +190,7 @@ return [
 
         //Laravel Datatable
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class
     ])->toArray(),
 
 ];

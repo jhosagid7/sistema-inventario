@@ -318,6 +318,11 @@ return [
             'url'  => 'refaccions',
             'icon' => 'fas fa-fw fa-wrench',
         ],
+        [
+            'text' => 'Salidas',
+            'url'  => 'output',
+            'icon' => 'fas fa-fw fa-truck',
+        ],
 
 
 

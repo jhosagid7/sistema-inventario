@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('output_details', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
-            $table->text('comment');
             $table->foreignId('output_id')->constrained();
             $table->foreignId('refaccion_id')->constrained();
             $table->timestamps();

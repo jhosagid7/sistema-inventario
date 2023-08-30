@@ -9,7 +9,7 @@ class Output extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['items','status', 'comment', 'user_id'];
+    protected $fillable = ['items', 'comment', 'user_id'];
 
     public function user()
     {

@@ -20,7 +20,6 @@
                                 <th class="text-center" scope="col">Operador</th>
                                 <th class="text-center" scope="col">Cant</th>
                                 <th class="text-center" scope="col">Comentario</th>
-                                <th class="text-center" scope="col">Status</th>
                                 <th class="text-center" scope="col">Fecha</th>
                                 <th class="text-center" scope="col">Acciones</th>
                             </tr>
@@ -73,30 +72,7 @@
                     data: 'comment',
                     name: 'comment',
                 },
-                {
-                    data: 'status',
-                    render: function (data, type) {
-                        var number = DataTable.render
-                            .number(',', '.', 2, '$')
-                            .display(data);
 
-                        if (type === 'display') {
-                            let color = 'danger';
-                            if (data == 'APPROVED') {
-                                color = 'success';
-                            }
-                            else if (data == 'PENDING') {
-                                color = 'warning';
-                            }
-
-                            return `<span class="badge badge-${color} text-white">${number}</span>`;
-                        }
-
-                        return number;
-                    },
-                    name: 'status',
-                    className: 'text-center'
-                },
                 {
                     data: 'created_at',
                     name: 'created_at',

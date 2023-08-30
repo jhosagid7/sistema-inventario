@@ -9,5 +9,5 @@ class Input extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['items', 'status', 'user_id'];
+    protected $fillable = ['items', 'user_id'];
 }

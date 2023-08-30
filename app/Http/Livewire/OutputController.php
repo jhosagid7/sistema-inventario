@@ -98,7 +98,6 @@ class OutputController extends Component
             $output = Output::create([
                 'items' => $this->itemsQuantity,
                 'comment' => $this->comment,
-                'status' => 'APPROVED',
                 'user_id' => Auth()->user()->id
             ]);
 

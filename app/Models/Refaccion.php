@@ -15,4 +15,8 @@ class Refaccion extends Model
     {
         return $this->hasMany(OutputDetail::class);
     }
+    public function outputDetails()
+    {
+        return $this->hasMany(OutputDetail::class);
+    }
 }

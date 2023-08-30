@@ -15,6 +15,7 @@
         {{--  COMMENT  --}}
         @include('livewire.outputs.partials.comment')
     </div>
+    <livewire:modal-search />
 </div>
 
 @push('css')

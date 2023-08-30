@@ -22,4 +22,6 @@ class OutputDetail extends Model
     {
         return $this->belongsTo(Refaccion::class);
     }
+
+
 }

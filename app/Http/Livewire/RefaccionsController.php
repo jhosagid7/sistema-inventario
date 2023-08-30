@@ -16,13 +16,12 @@ class RefaccionsController extends Component
 
     public $name, $search, $selected_id, $pageTitle, $componentName, $stock, $alerts;
     private $pagination = 5;
+    protected $paginationTheme = 'bootstrap';
 
     function ScanCode($id)
     {
         $this->ScanearCode($id);
-        // $this->emit('global-msg', "SE AGREGÓ EL PRODUCTO AL CARRITO");
     }
-    protected $paginationTheme = 'bootstrap';
 
     public function mount()
     {

@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+   @include('common.detailsOutput')
 </div>
 
 @stop
@@ -46,7 +47,7 @@
 
     <script>
     $(document).ready(function() {
-
+        var id
         $('.refaccions_table').DataTable({
             processing: true,
             serverSide: true,
@@ -74,25 +75,83 @@
                 },
                 {
                     data: 'status',
+                    render: function (data, type) {
+                        var number = DataTable.render
+                            .number(',', '.', 2, '$')
+                            .display(data);
+
+                        if (type === 'display') {
+                            let color = 'danger';
+                            if (data == 'APPROVED') {
+                                color = 'success';
+                            }
+                            else if (data == 'PENDING') {
+                                color = 'warning';
+                            }
+
+                            return `<span class="badge badge-${color} text-white">${number}</span>`;
+                        }
+
+                        return number;
+                    },
                     name: 'status',
                     className: 'text-center'
                 },
                 {
                     data: 'created_at',
                     name: 'created_at',
+                    visible: false,
                     className: 'text-center'
                 },
                 {
-                    data: 'actions',
-                    name: 'actions',
+                    data: 'id',
+                    name: 'id',
                     className: 'text-center',
                     searchable: false,
-                    orderable: false
+                    orderable: false,
+                    render: function (data, type) {
+                        if (type === 'display') {
+                            id = data
+                            return '<td class="text-center"><button onclick="getDetail('+data+')" class="btn btn-dark btn-sm"><i class="fas fa-list"></i></button></td>';
+                        }
+
+                        return data;
+                    }
                 }
             ],
         })
+
+
     })
 </script>
 
+<script>
+    function getDetail(id){
+        $("#modalDetails").modal("show");
+        if ($.trim(id != '')) {
+                $.ajax({
+                    type: 'get',
+                    url: '{{ url ("details") }}',
+                    data: "id=" + id,
+                    success: function (origens) {
+                        $("#tbodi>tbody").empty();
+                        $("#tbodi>tfoot").empty();
+                        let count = 1
+                        let total = 0
+                        $("#numSalida").html('N° ' + id)
+                        for(var i = 0; i < origens.length; i++){
+                            total += origens[i].quantity
+                            $("#tbodi>tbody").append("<tr><td class='text-center'><h6>"+count+"</h6></td><td class='text-center'><h6>"+origens[i].refaccion.name+"</h6></td><td class='text-center'><h6>"+origens[i].quantity+"</h6></td></tr>");
+                            count++
+                        }
+                        $("#tbodi>tfoot").append('<tr><td colspan="2"><h5 class="text-center font-weight-bold">TOTAL REFACCIONES CAMBIADAS</h5></td><td><h5 class="text-center">'+total+'</h5></td></tr>');
+                    }
+                });
 
+            }
+
+    }
+
+{{--  $("#tbodi>tbody").append("<tr><td class='text-center'><h6>"+origens[i].i+"</h6></td><td class='text-center'><h6>"+origens[i]..refaccion.name+"</h6></td><td class='text-center'><h6>"+origens[i]..refaccion.name+"</h6></td></tr>");  --}}
+</script>
 @stop

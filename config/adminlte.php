@@ -322,6 +322,10 @@ return [
             'text' => 'Salidas',
             'url'  => 'output',
             'icon' => 'fas fa-fw fa-truck',
+        ], [
+            'text' => 'Historico Salidas',
+            'url'  => 'home',
+            'icon' => 'fas fa-fw fa-history',
         ],
 
 

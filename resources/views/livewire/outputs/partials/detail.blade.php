@@ -1,3 +1,12 @@
+<div class="connect-sorting mb-2 sm">
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-dark mr-3 btn-sm" data-toggle="modal" data-target="#modalSearchRefaccion">
+            <i class="fas fa-wrench"></i> Buscar Refacción
+        </button>
+
+    </div>
+</div>
+
 <div class="connect-sorting">
     <div class="connect-sortingi-content">
         <div class="card simple-title-task ui-sortable-handle">

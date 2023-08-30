@@ -27,6 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('refaccions', RefaccionsController::class);
 Route::get('output', OutputController::class);
 
-// Auth::routes();
+Route::get('/details', [App\Http\Controllers\HomeController::class, 'getDetailsOutputs'])->name('details');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

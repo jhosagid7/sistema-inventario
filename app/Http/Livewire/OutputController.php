@@ -35,7 +35,7 @@ class OutputController extends Component
         ->section('content');
     }
 
-    public function ScanCodeById(Refaccion $refaccion)
+    public function AddModalSearchById(Refaccion $refaccion)
     {
         $this->IncreaseQuantity($refaccion);
     }
@@ -44,7 +44,8 @@ class OutputController extends Component
         'removeItem' => 'removeItem',
         'clearCart' => 'clearCart',
         'saveOutput' => 'saveOutput',
-        'scan-code' => 'ScanCode'
+        'scan-code' => 'ScanCode',
+        'Add-ModalSearch-ById' => 'AddModalSearchById'
     ];
 
 

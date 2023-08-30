@@ -16,7 +16,7 @@ class Output extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function outputs()
+    public function outputDetails()
     {
         return $this->hasMany(OutputDetail::class);
     }
